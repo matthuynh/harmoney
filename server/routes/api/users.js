@@ -52,20 +52,17 @@ router.post("/login", auth.optional, (req, res, next) => {
   
 	// Error catching if we don't get email or password fields
 	if (!user.email) {
-    console.log("Email not given");
 		return res.status(400).json({
 			errorMessage: "No email provided"
 		});
 	}
 
 	if (!user.password) {
-    console.log("Password not given");
 		return res.status(400).json({
 			errorMessage: "No password provided"
 		});
   }
 
-  console.log("About to run the authenticate code");
 	return passport.authenticate('local', { session: false }, (err, passportUser, info) => {
     if(err) {
       return next(err);
@@ -79,7 +76,7 @@ router.post("/login", auth.optional, (req, res, next) => {
     }
 
     console.log("400 error");
-    return res.status(400);
+    return res.status(400).send(info);
   })(req, res, next);
 });
 
