@@ -47,32 +47,7 @@ require("./models/Users");
 require("./config/passport");
 app.use(require("./routes"));
 app.use("/", require("./routes/index"));
-app.use("/rooms", require("./routes/api/rooms"));
-
-// Error handlers & middlewares
-if (!isProduction) {
-	app.use((err, req, res) => {
-		res.status(err.status || 500);
-
-		res.json({
-			errors: {
-				message: err.message,
-				error: err
-			}
-		});
-	});
-}
-
-app.use((err, req, res) => {
-	res.status(err.status || 500);
-
-	res.json({
-		errors: {
-			message: err.message,
-			error: {}
-		}
-	});
-});
+// app.use("/rooms", require("./routes/api/rooms"));
 
 // const PORT = process.env.PORT;
 const PORT = 5000;

@@ -7,6 +7,8 @@ const getTokenFromHeaders = (req) => {
   if(authorization && authorization.split(' ')[0] === 'Token') {
     return authorization.split(' ')[1];
   }
+
+  console.log("You are currently unauthenticated. Please log in");
   return null;
 };
 

@@ -4,7 +4,12 @@ const router = require("express").Router();
 const auth = require("../auth");
 const Users = mongoose.model("Users");
 
-// POST new user route (optional, everyone has access)
+/**
+ * @route         POST /register
+ * @description   
+ * 
+ * The user does NOT need to be authenticated to use this route
+ */
 router.post("/register", auth.optional, (req, res, next) => {
 	const {
 		body: { user }
@@ -43,7 +48,12 @@ router.post("/register", auth.optional, (req, res, next) => {
 	});
 });
 
-// POST login route (optional, everyone has access)
+/**
+ * @route         POST /login
+ * @description   
+ * 
+ * The user does NOT need to be authenticated to use this route
+ */
 router.post("/login", auth.optional, (req, res, next) => {
 	const {
 		body: { user }
@@ -80,7 +90,12 @@ router.post("/login", auth.optional, (req, res, next) => {
   })(req, res, next);
 });
 
-// GET current route (required, only authenticated users have access)
+/**
+ * @route         GET /current
+ * @description    Gets the currently logged-in user
+ * 
+ * The user needs to be authenticated to use this route
+ */
 router.get("/current", auth.required, (req, res, next) => {
 	const {
 		payload: { id }
@@ -92,22 +107,6 @@ router.get("/current", auth.required, (req, res, next) => {
 		}
 
 		return res.json({ user: user.toAuthJSON() });
-	});
-});
-
-// GET current route (required, only authenticated users have access)
-router.get("/current/print", auth.required, (req, res, next) => {
-	const {
-		payload: { id }
-	} = req;
-	// console.log(req);
-
-	return Users.findById(id).then(user => {
-		if (!user) {
-			return res.json({ message: "User does not exist" });
-		}
-
-		return res.json({ user: "User exists" });
 	});
 });
 
