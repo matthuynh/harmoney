@@ -2,9 +2,9 @@
   "name": "harmoney-server",
   "version": "1.0.0",
   "description": "The server for Harmoney",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon index",
+    "dev": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

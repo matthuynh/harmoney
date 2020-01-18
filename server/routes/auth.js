@@ -1,5 +1,6 @@
 const jwt = require('express-jwt');
 
+// Get a JWT token that will be sent from the client side in the request's headers
 const getTokenFromHeaders = (req) => {
   const { headers: { authorization } } = req;
 
@@ -9,6 +10,7 @@ const getTokenFromHeaders = (req) => {
   return null;
 };
 
+// Create an auth object with optinoal and required properties
 const auth = {
   required: jwt({
     secret: 'secret',
