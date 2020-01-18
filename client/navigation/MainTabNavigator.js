@@ -27,11 +27,14 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
+          ? `ios-home`
           : 'md-information-circle'
       }
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#5cf',
+  },
 };
 
 HomeStack.path = '';
@@ -44,10 +47,13 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: 'Payments',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-card' : 'md-link'} />
   ),
+  tabBarOptions: {
+    activeTintColor: '#5cf',
+  },
 };
 
 LinksStack.path = '';
@@ -64,6 +70,9 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
+  tabBarOptions: {
+    activeTintColor: '#5cf',
+  },
 };
 
 SettingsStack.path = '';
