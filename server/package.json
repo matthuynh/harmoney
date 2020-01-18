@@ -11,9 +11,16 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.9",
     "nodemon": "^2.0.2",
+    "path": "^0.12.7",
     "request": "^2.88.0"
   }
 }
