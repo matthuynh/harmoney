@@ -18,7 +18,6 @@ const app = express();
 
 //Configure our app
 app.use(cors());
-app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -29,8 +28,13 @@ if(!isProduction) {
 }
 
 //Configure Mongoose
-mongoose.connect('mongodb://localhost/passport-tutorial');
+mongoose.connect('mongodb://localhost/passport-tutorial', {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('debug', true);
+
+// Models & routes
+require('./models/Users');
+require('./config/passport');
+app.use(require('./routes'));
 
 //Error handlers & middlewares
 if(!isProduction) {
