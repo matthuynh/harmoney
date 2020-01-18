@@ -1,7 +1,8 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
-const passport = require("passport");
 const auth = require("../auth");
+const Rooms = require("../../models/Rooms");
 
 /**
  * @route         GET /create
@@ -11,8 +12,15 @@ const auth = require("../auth");
  * 
  * The user must be authenticated to use this route
  */
-router.get("/create", auth.required, (req, res, next) => {
+router.get("/create", auth.required, async (req, res, next) => {
     console.log("Hit the /create route");
+
+    // Generate a room ID
+    let roomID, roomIDExists;
+    do {
+        roomID = shortID.generate();
+        roomIDExists = await Rooms.findOne({ roomID });
+      } while(roomIDExists);
 });
 
 

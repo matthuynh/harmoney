@@ -27,7 +27,13 @@ router.post("/register", auth.optional, (req, res, next) => {
 		return res.status(400).json({
 			errorMessage: "No password provided"
 		});
-	}
+  }
+  
+  if (!(user.firstName && user.lastName && user.accountBalance && user.phoneNumber)) {
+    return res.status(400).json({
+      errorMessage: "Please fill in all required fields!"
+    })
+  }
 
   let email = user.email;
 	Users.findOne({ email }).then(found_user => {
@@ -39,8 +45,10 @@ router.post("/register", auth.optional, (req, res, next) => {
 		}
 
 		// Save new user in database
-		const finalUser = new Users(user);
-		finalUser.setPassword(user.password);
+    const finalUser = new Users(user);
+    console.log(user);
+    finalUser.setPassword(user.password);
+    finalUser.setPersonalInformation(user.firstName, user.lastName, user.accountBalance, user.phoneNumber);
 
 		return finalUser
 			.save()
