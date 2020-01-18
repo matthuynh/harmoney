@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Button, Text, View } from 'react-native';
 import { InputTextField } from './InputTextField';
+import { AccDecButtons } from '../specific/AccDecButtons';
+
 
 export function ModalContent(props) {
 
@@ -12,14 +14,17 @@ export function ModalContent(props) {
   return (
     <View style={styles.content}>
       <InputTextField placeholder="ex. 8d9f" label="Enter Room Code" />
-      <Button testID={'close-button'} onPress={props.onPress} title="Close" />
-      <Button testID={'submit-button'} onPress={handleSub} title="Submit" />
+      <AccDecButtons name1="Exit" name2="Submit" style={{ }}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   content: {
+    display: "flex",
+    flexGrow: 0.125,
+    position: 'relative',
+    overflow: 'hidden',
     backgroundColor: 'white',
     padding: 22,
     justifyContent: 'center',
