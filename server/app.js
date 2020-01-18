@@ -5,7 +5,8 @@ const session = require("express-session"); // used to create sessions (like in 
 const cors = require("cors");
 const mongoose = require("mongoose");
 const errorHandler = require("errorhandler"); // used for handling errors during development
-// require("dotenv").config()
+require('dotenv').config()
+
 
 // Configure isProduction variable
 const isProduction = process.env.NODE_ENV === "production";
@@ -33,7 +34,7 @@ if (!isProduction) {
 }
 
 // Configure Mongoose
-mongoose.connect("mongodb://localhost/harmoney-db", {
+mongoose.connect(process.env.DB_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 });
@@ -46,7 +47,7 @@ require("./models/Users");
 require("./config/passport");
 app.use(require("./routes"));
 app.use("/", require("./routes/index"));
-app.use("/rooms", require("./routes/rooms"));
+app.use("/rooms", require("./routes/api/rooms"));
 
 // Error handlers & middlewares
 if (!isProduction) {
