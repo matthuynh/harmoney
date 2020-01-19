@@ -8,7 +8,7 @@ export const GenericButton = (props) => {
             <Button
                 title={props.text}
                 titleStyle={{ fontWeight: '500' }}
-                
+                onPress={props.onPress}
                 containerStyle={{ width: 400, height: 45, marginBottom: 5}}
             />
         </TouchableOpacity>

@@ -67,3 +67,43 @@ export const a_contacts = [
       rightSubtitle:"$0.20"
     }
   ];
+
+  export const d1_contacts = [
+    {
+      name: 'Rahul Bajaj',
+      avatar_url: 'https://pbs.twimg.com/media/DKMaOu2WsAEH1RT.jpg',
+      subtitle: '905-6435-2342',
+      rightSubtitle:"$40.20",
+      color: "red"
+    }
+  ];
+
+  export const d2_contacts = [
+    {
+      name: 'Mom',
+      avatar_url: 'https://media.gettyimages.com/photos/happy-parenting-picture-id934843554?s=612x612',
+      subtitle: '253-532-7457',
+      rightSubtitle:"$15.49",
+      color: "red"
+    }
+  ];
+
+  export const d3_contacts = [
+    {
+      name: 'Grace Z, Michael P, Remy P ...',
+      avatar_url: 'https://image.shutterstock.com/image-vector/people-group-icon-vector-260nw-1283979952.jpg',
+      subtitle: '543-1435-7457, ...',
+      rightSubtitle:"$100.43",
+      color: "green"
+    }
+  ];
+
+  export const d4_contacts = [
+    {
+      name: 'Grace Zheng',
+      avatar_url: 'https://media.discordapp.net/attachments/643174241327382569/643182907422277670/image0.jpg?width=374&height=663',
+      subtitle: '543-1435-7457',
+      rightSubtitle:"$14.20",
+      color: "red"
+    }
+  ];

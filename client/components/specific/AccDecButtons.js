@@ -6,7 +6,6 @@ export class AccDecButtons extends Component {
   constructor (props) {
     super(props);
   }
-  
 
   render () {
 
@@ -15,6 +14,7 @@ export class AccDecButtons extends Component {
         <View style={styles.leftButton}>
             <Button
               title={this.props.name1}
+              onPress={this.props.onHandle1}
               buttonStyle={{backgroundColor: 'red'}}
               containerStyle={{width: 150}}
             />
@@ -22,6 +22,7 @@ export class AccDecButtons extends Component {
         <View style={styles.rightButton}>
             <Button
               title={this.props.name2}
+              onPress={this.props.onHandle2}
               buttonStyle={{backgroundColor: 'rgb(37,237,47)'}}
               containerStyle={{width: 150}}
 

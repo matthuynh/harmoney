@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button, StyleSheet, View} from 'react-native';
+import { GenericButton } from './GenericButton';
 
 export class ModalBaseScene extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export class ModalBaseScene extends Component {
 
   renderButton() {
     return (
-      <Button testID={'modal-open-button'} onPress={this.open} title="Open" />
+      <GenericButton color="white" text="Join a Room" onPress={this.open} title="Open"/>
     );
   }
 

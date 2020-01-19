@@ -9,6 +9,7 @@ export function RequestItem(props) {
           leftAvatar={{ source: { uri: props.leftAvatar } }}
           title={props.title}
           titleStyle={styles.titleText}
+          rightSubtitleStyle={{color: props.color}}
           subtitle={props.subtitle}
           rightSubtitle={props.rightSubtitle}
           bottomDivider

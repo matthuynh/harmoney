@@ -6,15 +6,15 @@ import { AccDecButtons } from '../specific/AccDecButtons';
 
 export function ModalContent(props) {
 
-  const handleSub = () => {
-    console.log("hi");
-    props.onPress();
+  handleSub = () => {
+    //TODO: add submit
+    props.onExit();
   }
 
   return (
     <View style={styles.content}>
       <InputTextField placeholder="ex. 8d9f" label="Enter Room Code" />
-      <AccDecButtons name1="Exit" name2="Submit" style={{ }}/>
+      <AccDecButtons onHandle1={props.onExit} onHandle2={handleSub} name1="Exit" name2="Submit" style={{ }}/>
     </View>
   );
 }

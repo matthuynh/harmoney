@@ -31,7 +31,7 @@ export class CreateRoomView extends Component {
           <ThinHeader text="R" />
           <AddContactList list={r_contacts}/>
         </ScrollView>
-        <GenericButton color="red" text="Invite Contacts to Room"/>
+        <GenericButton color="red" text="Create Room"/>
       </View>
       
       
