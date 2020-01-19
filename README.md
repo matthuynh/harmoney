@@ -1,24 +1,25 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
+ <img src="https://user-images.githubusercontent.com/19757152/72677997-e3738100-3a6f-11ea-8974-e8bdc870d9a0.png" alt="Harmoney logo"></a>
 </p>
 <h3 align="center">Harmoney</h3>
 
 <div align="center">
 
   [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com) 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+  [![Status](https://img.shields.io/badge/status-complete-success.svg)]() 
+  [![License](https://img.shields.io/badge/license-GPL-blue.svg)](LICENSE.md)
 
 </div>
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Harmoney - A UofTHacks 2020 project. Built by @jcserv, @daniil-oliynyk, @omardahir99, @matthuynh
     <br> 
 </p>
+
+## 🧐 Problem Statement <a name = "problem_statement"></a>
+Orange juice and toothpaste. Bleach and annomia. Lego bricks and feet. Friends and money. These pairs all have one thing in common: they are best left unmixed. Mixing friends and money can be an unnecessary source of strain in friendships. Harmoney is a group payments solution that eliminates these pain points.
 
 ## 📝 Table of Contents
 - [Problem Statement](#problem_statement)
@@ -28,14 +29,7 @@
 - [Setting up a local environment](#getting_started)
 - [Usage](#usage)
 - [Technology Stack](#tech_stack)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
-
-## 🧐 Problem Statement <a name = "problem_statement"></a>
-It is useful to design and follow a specific format when writing a problem statement. While there are several options
-for doing this, the following is a simple and straightforward template often used in Business Analysis to maintain
-focus on defining the problem.
 
 - IDEAL: This section is used to describe the desired or “to be” state of the process or product. At large, this section 
 should illustrate what the expected environment would look like once the solution is implemented.
@@ -47,10 +41,29 @@ Following this format will result in a workable document that can be used to und
 requirements that will lead to a winning solution. 
 
 ## 💡 Idea / Solution <a name = "idea"></a>
+Harmoney aims to solve situations involving 
+
+- Splitting dinner
+- Splitting a recurring monthly bill
+- Group gift
 This section is used to describe potential solutions. 
 
 Once the ideal, reality, and consequences sections have been 
 completed, and understood, it becomes easier to provide a solution for solving the problem.
+
+## 💡 Inspiration <a name = "inspiration"></a>
+
+## 💡 What it Does <a name = "inspiration"></a>
+
+## 💡 How we built it <a name = "inspiration"></a>
+
+## Challenges we ran into
+
+## Accomplishments we're proud of 
+
+## What we learned
+
+## What's next for AirDrums
 
 ## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
 - What are the dependencies of your project?
@@ -96,18 +109,20 @@ until finished
 Add notes about how to use the system.
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [MongoDB](https://www.mongodb.com/)
+- [ExpressJS](https://expressjs.com/)
+- [React Native](https://facebook.github.io/react-native/)
+- [PassportJS](http://www.passportjs.org/)
+- [NodeJS](https://nodejs.org/en/)
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@jcserv](https://github.com/jcserv)
+- [@daniil-oliynyk](https://github.com/daniil-oliynyk)
+- [@omardahir99](https://github.com/omardahir99)
+- [@matthuynh](https://github.com/matthuynh)
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) 
-who participated in this project.
+README format provided by [Kyle Lobo](https://github.com/kylelobo/The-Documentation-Compendium)
 
-## 🎉 Acknowledgments <a name = "acknowledgments"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+## Links:
+- http://harmoney.space/
+- Devpost
