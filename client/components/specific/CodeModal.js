@@ -17,7 +17,7 @@ export class CodeModal extends ModalBaseScene {
         isVisible={this.isVisible()}
         animationIn="slideInLeft"
         animationOut="slideOutRight">
-        <ModalContent onPress={this.close} />
+        <ModalContent onExit={this.close} />
       </Modal>
     );
   }
