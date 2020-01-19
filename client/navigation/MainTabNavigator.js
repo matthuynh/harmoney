@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import PaymentsScreen from '../screens/PaymentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import TestScreen from '../screens/TestScreen';
 
@@ -42,14 +42,14 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const PaymentsStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Payments: PaymentsScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
+PaymentsStack.navigationOptions = {
   tabBarLabel: 'Payments',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-card' : 'md-link'} />
@@ -59,7 +59,7 @@ LinksStack.navigationOptions = {
   },
 };
 
-LinksStack.path = '';
+PaymentsStack.path = '';
 
 const SettingsStack = createStackNavigator(
   {
@@ -82,7 +82,7 @@ SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  PaymentsStack,
   SettingsStack,
 });
 
