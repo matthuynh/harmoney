@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-
+const user = require('./Users')
 const { Schema } = mongoose;
-
 // TODO: Use Populate to reference User documents (don't need to re-create data)
 // https://mongoosejs.com/docs/populate.html
 
@@ -15,11 +14,7 @@ const RoomSchema = new Schema({
 		email: String
 	},
 	createdAt: Date,
-	roomParticipants: [{
-		email: String,
-		hasPaid: Boolean,
-		amountContributed: Number
-	}]
+	participants: [{amountOwed:Number, user:String}]
 });
 
 module.exports = mongoose.model("Rooms", RoomSchema, "Rooms");

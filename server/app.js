@@ -39,7 +39,7 @@ mongoose.connect(process.env.DB_URI, {
 	useUnifiedTopology: true
 });
 console.log("Connected to Mongo");
-mongoose.set("debug", true);
+//mongoose.set("debug", true);
 
 // Models & routes
 // Sidenote: the behaviour of 'require' is that it "executes" whatever code is in the module once it has been resolved and loaded

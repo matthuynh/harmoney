@@ -29,12 +29,13 @@ router.post("/register", auth.optional, (req, res, next) => {
 		});
   }
   
-  if (!(user.firstName && user.lastName && user.accountBalance && user.phoneNumber)) {
+  if (!(user.firstName && user.lastName && user.phoneNumber)) {
     return res.status(400).json({
       errorMessage: "Please fill in all required fields!"
     })
   }
 
+  user.accountBalance = 0;
   let email = user.email;
 	Users.findOne({ email }).then(found_user => {
 		// Prevent duplicate users from being created
@@ -111,7 +112,8 @@ router.get("/current", auth.required, (req, res, next) => {
 
 	return Users.findById(id).then(user => {
 		if (!user) {
-			return res.sendStatus(400);
+			console.log("hi")
+			return res.status(400).send("Baddy bad");
 		}
 
 		return res.json({ user: user.toAuthJSON() });

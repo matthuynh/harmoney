@@ -54,9 +54,11 @@ UserSchema.methods.toAuthJSON = function() {
     _id: this._id,
     email: this.email,
     token: this.generateJWT(),
+    firstName: this.firstName,
+    lastName: this.lastName
   };
 };
 
 
 // Inserts the UsersSchema (a document) into the Users collection (third parameter forces Mongo to NOT add an extra s to the collection name)
-mongoose.model('Users', UserSchema, 'Users');
+module.exports = mongoose.model('Users', UserSchema, 'Users');
