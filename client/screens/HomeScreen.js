@@ -10,12 +10,10 @@ import {
   Button,
   Image,
 } from 'react-native';
-import { MonoText } from '../components/StyledText';
 import { InputTextField } from '../components/base/InputTextField';
 import { ContactList } from '../components/base/ContactList';
 import { CodeModal } from '../components/specific/CodeModal';
-
-
+import { a_contacts }  from '../constants/Contacts';
 
 export default class HomeScreen extends Component {
 
@@ -57,7 +55,7 @@ export default class HomeScreen extends Component {
             <InputTextField label="Label" text="Text"/>
             <CodeModal />
           </View>
-          <ContactList />
+          <ContactList list={a_contacts}/>
         </ScrollView>
 
         <View style={styles.tabButton}>
@@ -78,24 +76,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  tabButton: {
-    position: 'absolute',
-    bottom: 5,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { width: 3, height: 5 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    backgroundColor: 'rgba(192, 192, 192, 0.1)'
   },
   buttonStyle: {
     marginTop: 20,
