@@ -2,7 +2,7 @@ import React from 'react'
 import { Header } from 'react-native-elements';
 
 
-const GenericHeader = () =>{
+export const GenericHeader = () =>{
 
     return (
         <Header
@@ -16,4 +16,3 @@ const GenericHeader = () =>{
     );
 
 }
-export default GenericHeader 

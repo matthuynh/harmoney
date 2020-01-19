@@ -4,8 +4,7 @@ import { Button, ButtonGroup, Icon, colors } from 'react-native-elements';
 
 export class AccDecButtons extends Component {
   constructor (props) {
-    super(props)
-  
+    super(props);
   }
   
 
@@ -16,14 +15,14 @@ export class AccDecButtons extends Component {
         <View style={styles.leftButton}>
             <Button
               title={this.props.name1}
-              buttonStyle={{backgroundColor: 'rgb(37,237,47)'}}
+              buttonStyle={{backgroundColor: 'red'}}
               containerStyle={{width: 150}}
             />
         </View>
         <View style={styles.rightButton}>
             <Button
               title={this.props.name2}
-              buttonStyle={{backgroundColor: 'red'}}
+              buttonStyle={{backgroundColor: 'rgb(37,237,47)'}}
               containerStyle={{width: 150}}
 
             />
@@ -35,6 +34,13 @@ export class AccDecButtons extends Component {
 }
 const styles = StyleSheet.create({
   container: {
+    paddingLeft: 20,
+    paddingTop: 10,
+    paddingRight: 20,
+    display: "flex",
+    height: 50,
+    justifyContent: 'space-between',
+    
     flexDirection: 'row',
     position: 'absolute',
     bottom: 15,
@@ -42,7 +48,6 @@ const styles = StyleSheet.create({
     right: 0,
   },
   leftButton: {
-    left: 40,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
@@ -57,7 +62,6 @@ const styles = StyleSheet.create({
   },
 
   rightButton: {
-    right: -70,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
