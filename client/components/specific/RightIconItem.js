@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { ListItem, Icon } from 'react-native-elements';
+import { ClickableIcon } from '../base/ClickableIcon';
 
 export function RightIconItem(props) {
 

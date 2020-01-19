@@ -45,7 +45,7 @@ export class HomeScrollView extends Component {
           <ScrollView style={styles.scrollView} horizontal={true} pagingEnabled={true}
           snapToInterval={width} snapToAlignment='center' persistentScrollbar={true}
           overScrollMode='never' decelerationRate='fast' bounces={false}
-          scrollIndicatorInsets={{top: 0, left: 0, bottom: height * 0.75, right: 0}}>
+          scrollIndicatorInsets={{top: 0, left: 0, bottom: height * 0.757, right: 0}}>
             <CreateRoomView />
             <RequestsView />
           </ScrollView>

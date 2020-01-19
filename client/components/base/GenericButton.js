@@ -1,21 +1,38 @@
 import React from 'react'
 import { Button } from 'react-native-elements';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, StyleSheet } from 'react-native'
 
-export const GenericButton = () => {
+export const GenericButton = (props) => {
     return (
-        <View style={{ alignItems: 'center' }}>
-
+        <TouchableOpacity style={styles.button}>
             <Button
-                title="A generic button"
+                title={props.text}
                 titleStyle={{ fontWeight: '500' }}
-                buttonStyle={{
-                  backgroundColor: 'rgba(87,198,244, 1)',
-                  borderColor: 'transparent',
-                  borderWidth: 0,
-                }}
-                containerStyle={{ marginTop: 5, width: 400, height: 45, }}
+                
+                containerStyle={{ width: 400, height: 45, marginBottom: 5}}
             />
-        </View>
+        </TouchableOpacity>
     );
 }
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center', 
+        position: 'absolute',
+        bottom: 5,
+        left: 0,
+        right: 0,
+        ...Platform.select({
+        ios: {
+            shadowColor: 'black',
+            shadowOffset: { width: 3, height: 5 },
+            shadowOpacity: 0.1,
+            shadowRadius: 3,
+        },
+        android: {
+            elevation: 20,
+        },
+        }),
+        backgroundColor: 'rgba(192, 192, 192, 0.1)'
+    }
+});
