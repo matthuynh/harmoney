@@ -21,7 +21,8 @@ export default class HomeScreen extends Component {
       <View>
           <GenericHeader/>
       </View>
-      <HomeScrollView onPress={() => this.props.navigation.navigate('CreateRoom')}/>
+      <HomeScrollView onPress={() => this.props.navigation.navigate('CreateRoom')}
+      onReqPress={()=>this.props.navigation.navigate('RequestConfirm')}/>
 
     </View>
 

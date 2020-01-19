@@ -15,6 +15,7 @@ export class RequestsView extends Component {
 
     this.state = {
       isModalVisible: false,
+      onPress: props.onPress
     }
     this.toggleModal = this.toggleModal.bind(this);
 
@@ -41,7 +42,7 @@ export class RequestsView extends Component {
           
         </ScrollView>
         <View>
-            <CodeModal />
+            <CodeModal onPress={this.state.onPress}/>
           </View>
       </View>
       

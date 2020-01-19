@@ -6,15 +6,14 @@ import {
   View,
   SafeAreaView
 } from 'react-native';
-import { Card, Header, Text,  } from 'react-native-elements';
+import { Card, Header, Text } from 'react-native-elements';
 import { ClickableIcon } from '../components/base/ClickableIcon';
-import { InputTextField } from '../components/base/InputTextField';
-import { ThinHeader } from '../components/base/ThinHeader';
-import { GenericButton } from '../components/base/GenericButton';
-import { ShareList } from '../components/specific/ShareList';
-import { rooms }  from '../constants/Contacts';
+import { Contact } from '../components/base/Contact';
 
-export default class CreateRoomScreen extends React.Component {
+import { InvitedList } from '../components/specific/InvitedList';
+import { rooms } from '../constants/Contacts';
+
+export default class RoomConfirmedScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -33,7 +32,7 @@ export default class CreateRoomScreen extends React.Component {
         <View style={styles.container}>
             <Header
                 leftComponent={<ClickableIcon name="keyboard-backspace" type="material" color="white" onPress={this.handleIconClick}/>}
-                rightComponent={this.subheader("Room Details")}
+                rightComponent={this.subheader("Room Created!")}
                 containerStyle={{
                     backgroundColor: '#57c6f4', height: 40, paddingTop: 0
                   }}
@@ -41,27 +40,17 @@ export default class CreateRoomScreen extends React.Component {
                 rightContainerStyle={{flex: 6.5, alignItems: 'flex-start'}}
                 placement='center'
             />
-  
-           <SafeAreaView style={styles.container}>
-            <View>
-              <InputTextField label="Name"/>
-            </View> 
-            <View>
-              <InputTextField label="Amount" text="$0.00" />
-              <Card title="Room Code">
-                <Text>8f9d</Text>
-              </Card>
-            </View>
-            <ThinHeader text="Room Members" />
 
-            <ScrollView style={styles.members} bounces={false}>
-              <ShareList list={rooms} icon='delete'/>
-            </ScrollView>
-           </SafeAreaView>
-  
-           
-          <GenericButton color="red" text="Confirm Room" onPress={() => this.props.navigation.navigate('RoomConfirmed')}/>
-  
+            <Text style={styles.h1}>Waiting ...</Text>
+
+            <Text style={styles.subtitle}>Currently waiting for everyone to accept/decline!</Text>
+             
+            <Card title="Invited Users">
+              <ScrollView style={styles.members} bounces={false}>
+                  <InvitedList list={rooms}/>
+              </ScrollView>
+
+            </Card>
         </View>
       </View>
   
@@ -71,7 +60,7 @@ export default class CreateRoomScreen extends React.Component {
   
 }
 
-CreateRoomScreen.navigationOptions = {
+RoomConfirmedScreen.navigationOptions = {
   header: null,
 };
 
@@ -81,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   members: {
-    flex: 1,
+    height: 250,
     backgroundColor: '#fff',
     paddingTop: 10
   },
@@ -93,5 +82,16 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 14,
     color: '#ffff'  
+  },
+  h1 : {
+    fontWeight: 'bold',
+    paddingTop: 70,
+    fontSize: 60,
+    textAlign: 'center'
+  },
+  subtitle : {
+    paddingTop: 50,
+    fontSize: 30,
+    textAlign: 'center'
   }
 });

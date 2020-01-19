@@ -43,7 +43,7 @@ export class HomeScrollView extends Component {
           overScrollMode='never' decelerationRate='fast' bounces={false}
           scrollIndicatorInsets={{top: 0, left: 0, bottom: height * 0.757, right: 0}}>
             <CreateRoomView onPress={this.props.onPress}/>
-            <RequestsView />
+            <RequestsView onPress={this.props.onReqPress}/>
           </ScrollView>
         </SafeAreaView>
       </View>

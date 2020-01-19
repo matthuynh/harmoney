@@ -8,13 +8,11 @@ import {
 } from 'react-native';
 import { Card, Header, Text,  } from 'react-native-elements';
 import { ClickableIcon } from '../components/base/ClickableIcon';
-import { InputTextField } from '../components/base/InputTextField';
-import { ThinHeader } from '../components/base/ThinHeader';
-import { GenericButton } from '../components/base/GenericButton';
-import { ShareList } from '../components/specific/ShareList';
-import { rooms }  from '../constants/Contacts';
+import { Contact } from '../components/base/Contact';
 
-export default class CreateRoomScreen extends React.Component {
+import { AccDecButtons } from '../components/specific/AccDecButtons';
+
+export default class RequestConfirmScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -33,7 +31,7 @@ export default class CreateRoomScreen extends React.Component {
         <View style={styles.container}>
             <Header
                 leftComponent={<ClickableIcon name="keyboard-backspace" type="material" color="white" onPress={this.handleIconClick}/>}
-                rightComponent={this.subheader("Room Details")}
+                rightComponent={this.subheader("Request Confirmation")}
                 containerStyle={{
                     backgroundColor: '#57c6f4', height: 40, paddingTop: 0
                   }}
@@ -41,26 +39,17 @@ export default class CreateRoomScreen extends React.Component {
                 rightContainerStyle={{flex: 6.5, alignItems: 'flex-start'}}
                 placement='center'
             />
-  
-           <SafeAreaView style={styles.container}>
-            <View>
-              <InputTextField label="Name"/>
-            </View> 
-            <View>
-              <InputTextField label="Amount" text="$0.00" />
-              <Card title="Room Code">
-                <Text>8f9d</Text>
-              </Card>
-            </View>
-            <ThinHeader text="Room Members" />
 
-            <ScrollView style={styles.members} bounces={false}>
-              <ShareList list={rooms} icon='delete'/>
-            </ScrollView>
-           </SafeAreaView>
-  
+            <Contact title="Mom" leftAvatar='https://media.gettyimages.com/photos/happy-parenting-picture-id934843554?s=612x612'
+            subtitle='253-532-7457'/>
+
+            <Text style={styles.h1}>Bubble Tea</Text>
+
+            <Text style={styles.subtitle}>$15.49</Text>
            
-          <GenericButton color="red" text="Confirm Room" onPress={() => this.props.navigation.navigate('RoomConfirmed')}/>
+          <AccDecButtons name1="Decline" onHandle1={()=>this.props.navigation.navigate('Home')} 
+          name2="Accept"
+          onHandle2={()=>this.props.navigation.navigate('Done')}/>
   
         </View>
       </View>
@@ -71,7 +60,7 @@ export default class CreateRoomScreen extends React.Component {
   
 }
 
-CreateRoomScreen.navigationOptions = {
+RequestConfirmScreen.navigationOptions = {
   header: null,
 };
 
@@ -93,5 +82,16 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 14,
     color: '#ffff'  
+  },
+  h1 : {
+    fontWeight: 'bold',
+    paddingTop: 150,
+    fontSize: 75,
+    textAlign: 'center'
+  },
+  subtitle : {
+    fontWeight: 'bold',
+    fontSize: 50,
+    textAlign: 'center'
   }
 });
