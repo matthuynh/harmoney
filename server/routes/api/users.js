@@ -27,16 +27,17 @@ router.post("/register", auth.optional, (req, res, next) => {
 		return res.status(400).json({
 			errorMessage: "No password provided"
 		});
-  }
-  
-  if (!(user.firstName && user.lastName && user.phoneNumber)) {
-    return res.status(400).json({
-      errorMessage: "Please fill in all required fields!"
-    })
-  }
+	}
+	
+	if (!(user.firstName && user.lastName && user.phoneNumber)) {
+		return res.status(400).json({
+		errorMessage: "Please fill in all required fields!"
+		})
+	}
 
-  user.accountBalance = 0;
-  let email = user.email;
+	user.accountBalance = 0;
+	user.roomIDs = [];
+	let email = user.email;
 	Users.findOne({ email }).then(found_user => {
 		// Prevent duplicate users from being created
 		if (found_user) {
@@ -46,10 +47,10 @@ router.post("/register", auth.optional, (req, res, next) => {
 		}
 
 		// Save new user in database
-    const finalUser = new Users(user);
-    console.log(user);
-    finalUser.setPassword(user.password);
-    finalUser.setPersonalInformation(user.firstName, user.lastName, user.accountBalance, user.phoneNumber);
+		const finalUser = new Users(user);
+		console.log(user);
+		finalUser.setPassword(user.password);
+		finalUser.setPersonalInformation(user.firstName, user.lastName, user.accountBalance, user.phoneNumber);
 
 		return finalUser
 			.save()

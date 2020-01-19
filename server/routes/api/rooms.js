@@ -95,6 +95,14 @@ router.post("/join", auth.required, async (req, res, next) => {
     user = await Users.findById(req.body.user._id);
 
     room = await Rooms.findOne({ roomID });
+    if(!room){
+      res.status(404).json({error:"Room doesn't exist"});
+    }
+
+    console.log(user);
+    user.roomIDs.push({id: roomID});
+    user.markModified('roomIDs');
+    await user.save();
     newVal = (room.roomBalance / (room.participants.length + 1)).toFixed(2)
     for(i=0; i<room.participants.length; i++){
       if(room.participants[i].user == req.body.user._id){

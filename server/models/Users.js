@@ -11,7 +11,8 @@ const UserSchema = new Schema({
   firstName: String,
   lastName: String,
   accountBalance: Number,
-  phoneNumber: String
+  phoneNumber: String,
+  roomIDs: [{id: String}]
 });
 
 // Generates a salt. Given a password, create a hash for that password. Salt the password.
@@ -55,7 +56,8 @@ UserSchema.methods.toAuthJSON = function() {
     email: this.email,
     token: this.generateJWT(),
     firstName: this.firstName,
-    lastName: this.lastName
+    lastName: this.lastName,
+    rooms: this.roomIDs
   };
 };
 
