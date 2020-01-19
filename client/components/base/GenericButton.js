@@ -2,13 +2,7 @@ import React from 'react'
 import { Button } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native'
 
-<<<<<<< HEAD:client/components/GenericButton.js
-export default class GenericButton extends React.Component {
-    render(){
-
-=======
 export const GenericButton = () => {
->>>>>>> ab28cb353e47931727c2a03bba4dd5c385541f07:client/components/base/GenericButton.js
     return (
         <View style={{ alignItems: 'center' }}>
 
@@ -26,9 +20,4 @@ export const GenericButton = () => {
             />
         </View>
     );
-<<<<<<< HEAD:client/components/GenericButton.js
-    }
 }
-=======
-}
->>>>>>> ab28cb353e47931727c2a03bba4dd5c385541f07:client/components/base/GenericButton.js

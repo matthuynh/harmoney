@@ -1,7 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import GenericButton from '../components/GenericButton'
-import GenericHeader from '../components/GenericHeader'
+import GenericButton from '../components/base/GenericButton'
+import GenericHeader from '../components/base/GenericHeader'
 
 import {
   Image,

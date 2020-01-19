@@ -1,14 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
-<<<<<<< HEAD
-import React from 'react';
-import GenericButton from '../components/GenericButton'
-import GenericHeader from '../components/GenericHeader'
-
-=======
 import React, { Component } from 'react';
 import { GenericButton } from '../components/base/GenericButton'
 import { GenericHeader } from '../components/base/GenericHeader'
->>>>>>> ab28cb353e47931727c2a03bba4dd5c385541f07
 import {
   Platform,
   ScrollView,
@@ -16,42 +9,6 @@ import {
   View,
   Button,
 } from 'react-native';
-
-
-<<<<<<< HEAD
-
-export default class HomeScreen extends React.Component {
-  render() {
-
-
-  return (
-    <View style={styles.container}>
-      <View>
-          <GenericHeader/>
-      </View>
-      
-      <ScrollView>
-            
-      </ScrollView>
-
-      <View style={styles.tabButton}>
-        {
-          
-          <GenericButton 
-          onPress={() => this.props.navigation.navigate('Test')}
-          />
-          
-        }
-      </View>
-    </View>
-  );
-}
-}
-HomeScreen.navigationOptions = {
-  header: null,
-};
-
-=======
 import { MonoText } from '../components/StyledText';
 import { InputTextField } from '../components/base/InputTextField';
 import { ContactList } from '../components/base/ContactList';
@@ -116,7 +73,6 @@ HomeScreen.navigationOptions = {
   header: null,
 };
 
->>>>>>> ab28cb353e47931727c2a03bba4dd5c385541f07
 const styles = StyleSheet.create({
   container: {
     flex: 1,
