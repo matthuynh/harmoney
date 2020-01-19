@@ -5,17 +5,38 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import PaymentsScreen from '../screens/PaymentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import CreateRoomScreen from '../screens/CreateRoomScreen';
+import RequestConfirmScreen from '../screens/RequestConfirmScreen';
+import RoomConfirmedScreen from '../screens/RoomConfirmedScreen';
+import DoneScreen from '../screens/DoneScreen';
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {},
+  default: {  },
 });
+
+const CreateRoomStack = createStackNavigator(
+  {
+    CreateRoom: CreateRoomScreen,
+    RoomConfirmed: RoomConfirmedScreen
+  },
+  config
+);
+
+CreateRoomStack.path='';
+
 
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
+    CreateRoom: CreateRoomScreen,
+    RequestConfirm: RequestConfirmScreen,
+    RoomConfirmed: RoomConfirmedScreen,
+    Done: DoneScreen
+
   },
   config
 );
@@ -27,30 +48,36 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
+          ? `ios-home`
           : 'md-information-circle'
       }
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#5cf',
+  },
 };
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const PaymentsStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Payments: PaymentsScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+PaymentsStack.navigationOptions = {
+  tabBarLabel: 'Payments',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-card' : 'md-link'} />
   ),
+  tabBarOptions: {
+    activeTintColor: '#5cf',
+  },
 };
 
-LinksStack.path = '';
+PaymentsStack.path = '';
 
 const SettingsStack = createStackNavigator(
   {
@@ -64,13 +91,16 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
+  tabBarOptions: {
+    activeTintColor: '#5cf',
+  },
 };
 
 SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  PaymentsStack,
   SettingsStack,
 });
 
