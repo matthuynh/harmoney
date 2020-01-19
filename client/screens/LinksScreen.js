@@ -17,9 +17,6 @@ export default function LinksScreen() {
 
       </ScrollView>
 
-      <View>
-        <AccDecButtons name1='Syubmit' name2='Decline'/>
-      </View>
 
     </View>
 

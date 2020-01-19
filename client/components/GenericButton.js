@@ -2,12 +2,16 @@ import React from 'react'
 import { Button } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native'
 
-const GenericButton = () => {
+export default class GenericButton extends React.Component {
+    render(){
+
     return (
         <View style={{ alignItems: 'center' }}>
 
             <Button
                 title="A generic button"
+                onPress={this.props.onPress}
+
                 titleStyle={{ fontWeight: '500' }}
                 buttonStyle={{
                   backgroundColor: 'rgba(87,198,244, 1)',
@@ -18,6 +22,5 @@ const GenericButton = () => {
             />
         </View>
     );
+    }
 }
-
-export default GenericButton
