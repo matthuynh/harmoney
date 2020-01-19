@@ -11,14 +11,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-
-
-import { MonoText } from '../components/StyledText';
 import { InputTextField } from '../components/base/InputTextField';
 import { ContactList } from '../components/base/ContactList';
 import { CodeModal } from '../components/specific/CodeModal';
-
-
 
 export default class HomeScreen extends Component {
 
