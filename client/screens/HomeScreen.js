@@ -8,6 +8,7 @@ import {
   StyleSheet,
   View,
   Button,
+  Image,
 } from 'react-native';
 import { MonoText } from '../components/StyledText';
 import { InputTextField } from '../components/base/InputTextField';

@@ -8,8 +8,6 @@ export const GenericButton = () => {
 
             <Button
                 title="A generic button"
-                onPress={this.props.onPress}
-
                 titleStyle={{ fontWeight: '500' }}
                 buttonStyle={{
                   backgroundColor: 'rgba(87,198,244, 1)',
