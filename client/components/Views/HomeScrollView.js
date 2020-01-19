@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, SafeAreaView, Text, ScrollView, StyleSheet, Dimensions } from 'react-native';
 import { Header } from 'react-native-elements';
-import { CreateRoomView } from '../views/CreateRoomView';
-import { RequestsView } from '../views/RequestsView';
+import { CreateRoomView } from '../Views/CreateRoomView';
+import { RequestsView } from '../Views/RequestsView';
 import { ClickableIcon } from '../base/ClickableIcon';
 
 const { width, height } = Dimensions.get('window');
