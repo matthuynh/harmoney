@@ -31,7 +31,8 @@ export class CreateRoomView extends Component {
           <ThinHeader text="R" />
           <AddContactList list={r_contacts}/>
         </ScrollView>
-        <GenericButton color="red" text="Create Room"/>
+        <GenericButton onPress={this.props.onPress} color="red" text="Create Room"/>
+
       </View>
       
       

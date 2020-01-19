@@ -7,8 +7,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import TestScreen from '../screens/TestScreen';
-
+import CreateRoomScreen from '../screens/CreateRoomScreen'
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
@@ -17,7 +16,7 @@ const config = Platform.select({
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Test: TestScreen,
+    CreateRoom: CreateRoomScreen,
     
   },
   config

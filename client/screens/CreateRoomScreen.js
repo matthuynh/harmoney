@@ -14,7 +14,7 @@ import { GenericButton } from '../components/base/GenericButton';
 import { ShareList } from '../components/specific/ShareList';
 import { rooms }  from '../constants/Contacts';
 
-export default class LinksScreen extends React.Component {
+export default class CreateRoomScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -71,7 +71,7 @@ export default class LinksScreen extends React.Component {
   
 }
 
-LinksScreen.navigationOptions = {
+CreateRoomScreen.navigationOptions = {
   header: null,
 };
 

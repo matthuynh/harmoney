@@ -4,7 +4,7 @@ import { View, TouchableOpacity, StyleSheet } from 'react-native'
 
 export const GenericButton = (props) => {
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} >
             <Button
                 title={props.text}
                 titleStyle={{ fontWeight: '500' }}
