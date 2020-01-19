@@ -7,18 +7,36 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import PaymentsScreen from '../screens/PaymentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import TestScreen from '../screens/TestScreen';
+import CreateRoomScreen from '../screens/CreateRoomScreen';
+import RequestConfirmScreen from '../screens/RequestConfirmScreen';
+import RoomConfirmedScreen from '../screens/RoomConfirmedScreen';
+import DoneScreen from '../screens/DoneScreen';
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {},
+  default: {  },
 });
+
+const CreateRoomStack = createStackNavigator(
+  {
+    CreateRoom: CreateRoomScreen,
+    RoomConfirmed: RoomConfirmedScreen
+  },
+  config
+);
+
+CreateRoomStack.path='';
+
 
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Test: TestScreen,
-    
+    CreateRoom: CreateRoomScreen,
+    RequestConfirm: RequestConfirmScreen,
+    RoomConfirmed: RoomConfirmedScreen,
+    Done: DoneScreen
+
   },
   config
 );

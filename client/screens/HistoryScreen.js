@@ -15,7 +15,7 @@ import { ClickableIcon } from '../components/base/ClickableIcon';
 import { d1_contacts, d2_contacts, d3_contacts, d4_contacts }  from '../constants/Contacts';
 
 
-export default class PaymentsScreen extends React.Component {
+export default class HistoryScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -64,7 +64,7 @@ export default class PaymentsScreen extends React.Component {
   
 }
 
-PaymentsScreen.navigationOptions = {
+HistoryScreen.navigationOptions = {
   header: null,
 };
 

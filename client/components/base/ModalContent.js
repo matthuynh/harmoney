@@ -7,7 +7,7 @@ import { AccDecButtons } from '../specific/AccDecButtons';
 export function ModalContent(props) {
 
   handleSub = () => {
-    //TODO: add submit
+    props.onSubmit();
     props.onExit();
   }
 

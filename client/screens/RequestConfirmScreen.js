@@ -4,18 +4,15 @@ import {
   ScrollView,
   StyleSheet,
   View,
-  SafeAreaView,
-  Image
+  SafeAreaView
 } from 'react-native';
-import { Header, Text,  } from 'react-native-elements';
-import { ThinHeader } from "../components/base/ThinHeader";
-import { RequestsList } from '../components/specific/RequestsList';
-
+import { Card, Header, Text,  } from 'react-native-elements';
 import { ClickableIcon } from '../components/base/ClickableIcon';
-import { d1_contacts, d2_contacts, d3_contacts, d4_contacts }  from '../constants/Contacts';
+import { Contact } from '../components/base/Contact';
 
+import { AccDecButtons } from '../components/specific/AccDecButtons';
 
-export default class PaymentsScreen extends React.Component {
+export default class RequestConfirmScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -34,7 +31,7 @@ export default class PaymentsScreen extends React.Component {
         <View style={styles.container}>
             <Header
                 leftComponent={<ClickableIcon name="keyboard-backspace" type="material" color="white" onPress={this.handleIconClick}/>}
-                rightComponent={this.subheader("Transfer History")}
+                rightComponent={this.subheader("Request Confirmation")}
                 containerStyle={{
                     backgroundColor: '#57c6f4', height: 40, paddingTop: 0
                   }}
@@ -43,17 +40,16 @@ export default class PaymentsScreen extends React.Component {
                 placement='center'
             />
 
-        <ScrollView style={styles.container} bounces={false}>
-          <ThinHeader text="January 18th, 2020" />
-          <RequestsList list={d1_contacts}/>
-          <ThinHeader text="January 14th, 2020" />
-          <RequestsList list={d2_contacts}/>
-          <ThinHeader text="January 4th, 2020" />
-          <RequestsList list={d3_contacts}/>
-          <ThinHeader text="December 24th, 2019" />
-          <RequestsList list={d4_contacts}/>
-        </ScrollView>
+            <Contact title="Mom" leftAvatar='https://media.gettyimages.com/photos/happy-parenting-picture-id934843554?s=612x612'
+            subtitle='253-532-7457'/>
 
+            <Text style={styles.h1}>Bubble Tea</Text>
+
+            <Text style={styles.subtitle}>$15.49</Text>
+           
+          <AccDecButtons name1="Decline" onHandle1={()=>this.props.navigation.navigate('Home')} 
+          name2="Accept"
+          onHandle2={()=>this.props.navigation.navigate('Done')}/>
   
         </View>
       </View>
@@ -64,14 +60,14 @@ export default class PaymentsScreen extends React.Component {
   
 }
 
-PaymentsScreen.navigationOptions = {
+RequestConfirmScreen.navigationOptions = {
   header: null,
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffff'
+    backgroundColor: '#fff'
   },
   members: {
     flex: 1,
@@ -94,9 +90,8 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   subtitle : {
-    paddingTop: 60,
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: 50,
     textAlign: 'center'
   }
 });

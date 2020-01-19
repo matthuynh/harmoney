@@ -4,18 +4,17 @@ import {
   ScrollView,
   StyleSheet,
   View,
-  SafeAreaView,
-  Image
+  SafeAreaView
 } from 'react-native';
-import { Header, Text,  } from 'react-native-elements';
-import { ThinHeader } from "../components/base/ThinHeader";
-import { RequestsList } from '../components/specific/RequestsList';
-
+import { Card, Header, Text,  } from 'react-native-elements';
 import { ClickableIcon } from '../components/base/ClickableIcon';
-import { d1_contacts, d2_contacts, d3_contacts, d4_contacts }  from '../constants/Contacts';
+import { InputTextField } from '../components/base/InputTextField';
+import { ThinHeader } from '../components/base/ThinHeader';
+import { GenericButton } from '../components/base/GenericButton';
+import { ShareList } from '../components/specific/ShareList';
+import { rooms }  from '../constants/Contacts';
 
-
-export default class PaymentsScreen extends React.Component {
+export default class CreateRoomScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -34,7 +33,7 @@ export default class PaymentsScreen extends React.Component {
         <View style={styles.container}>
             <Header
                 leftComponent={<ClickableIcon name="keyboard-backspace" type="material" color="white" onPress={this.handleIconClick}/>}
-                rightComponent={this.subheader("Transfer History")}
+                rightComponent={this.subheader("Room Details")}
                 containerStyle={{
                     backgroundColor: '#57c6f4', height: 40, paddingTop: 0
                   }}
@@ -42,18 +41,26 @@ export default class PaymentsScreen extends React.Component {
                 rightContainerStyle={{flex: 6.5, alignItems: 'flex-start'}}
                 placement='center'
             />
+  
+           <SafeAreaView style={styles.container}>
+            <View>
+              <InputTextField label="Name"/>
+            </View> 
+            <View>
+              <InputTextField label="Amount" text="$0.00" />
+              <Card title="Room Code">
+                <Text>8f9d</Text>
+              </Card>
+            </View>
+            <ThinHeader text="Room Members" />
 
-        <ScrollView style={styles.container} bounces={false}>
-          <ThinHeader text="January 18th, 2020" />
-          <RequestsList list={d1_contacts}/>
-          <ThinHeader text="January 14th, 2020" />
-          <RequestsList list={d2_contacts}/>
-          <ThinHeader text="January 4th, 2020" />
-          <RequestsList list={d3_contacts}/>
-          <ThinHeader text="December 24th, 2019" />
-          <RequestsList list={d4_contacts}/>
-        </ScrollView>
-
+            <ScrollView style={styles.members} bounces={false}>
+              <ShareList list={rooms} icon='delete'/>
+            </ScrollView>
+           </SafeAreaView>
+  
+           
+          <GenericButton color="red" text="Confirm Room" onPress={() => this.props.navigation.navigate('RoomConfirmed')}/>
   
         </View>
       </View>
@@ -64,14 +71,14 @@ export default class PaymentsScreen extends React.Component {
   
 }
 
-PaymentsScreen.navigationOptions = {
+CreateRoomScreen.navigationOptions = {
   header: null,
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffff'
+    backgroundColor: '#fff'
   },
   members: {
     flex: 1,
@@ -86,17 +93,5 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 14,
     color: '#ffff'  
-  },
-  h1 : {
-    fontWeight: 'bold',
-    paddingTop: 150,
-    fontSize: 75,
-    textAlign: 'center'
-  },
-  subtitle : {
-    paddingTop: 60,
-    fontWeight: 'bold',
-    fontSize: 30,
-    textAlign: 'center'
   }
 });

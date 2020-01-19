@@ -8,14 +8,12 @@ import {
   Image
 } from 'react-native';
 import { Header, Text,  } from 'react-native-elements';
-import { ThinHeader } from "../components/base/ThinHeader";
-import { RequestsList } from '../components/specific/RequestsList';
-
 import { ClickableIcon } from '../components/base/ClickableIcon';
-import { d1_contacts, d2_contacts, d3_contacts, d4_contacts }  from '../constants/Contacts';
+import { Contact } from '../components/base/Contact';
 
+import { AccDecButtons } from '../components/specific/AccDecButtons';
 
-export default class PaymentsScreen extends React.Component {
+export default class DoneScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -34,7 +32,7 @@ export default class PaymentsScreen extends React.Component {
         <View style={styles.container}>
             <Header
                 leftComponent={<ClickableIcon name="keyboard-backspace" type="material" color="white" onPress={this.handleIconClick}/>}
-                rightComponent={this.subheader("Transfer History")}
+                rightComponent={this.subheader("Request Confirmation")}
                 containerStyle={{
                     backgroundColor: '#57c6f4', height: 40, paddingTop: 0
                   }}
@@ -43,17 +41,11 @@ export default class PaymentsScreen extends React.Component {
                 placement='center'
             />
 
-        <ScrollView style={styles.container} bounces={false}>
-          <ThinHeader text="January 18th, 2020" />
-          <RequestsList list={d1_contacts}/>
-          <ThinHeader text="January 14th, 2020" />
-          <RequestsList list={d2_contacts}/>
-          <ThinHeader text="January 4th, 2020" />
-          <RequestsList list={d3_contacts}/>
-          <ThinHeader text="December 24th, 2019" />
-          <RequestsList list={d4_contacts}/>
-        </ScrollView>
+            <Text style={styles.h1}>Done!</Text>
 
+
+            <Text style={styles.subtitle}>Your request has been completed.</Text>
+           
   
         </View>
       </View>
@@ -64,14 +56,14 @@ export default class PaymentsScreen extends React.Component {
   
 }
 
-PaymentsScreen.navigationOptions = {
+DoneScreen.navigationOptions = {
   header: null,
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffff'
+    backgroundColor: '#66ff66'
   },
   members: {
     flex: 1,

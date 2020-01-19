@@ -107,3 +107,49 @@ export const a_contacts = [
       color: "red"
     }
   ];
+
+  export const rooms = [
+    {
+      name: 'Michael Phung',
+      avatar_url: 'https://images.genius.com/2d224d63c1dbdf69f0488093ca1bb22c.1000x1000x1.jpg',
+      subtitle: '435-4976-7457',
+      rightSubtitle:"$0.10"
+    },
+    {
+      name: 'Mohammed Ali Siddiqui',
+      avatar_url: 'https://pbs.twimg.com/profile_images/651555432297795585/Hc0jkibC_400x400.jpg',
+      subtitle: '643-845-4342',
+      rightSubtitle:"$856.10"
+    },
+    {
+      name: 'Mom',
+      avatar_url: 'https://media.gettyimages.com/photos/happy-parenting-picture-id934843554?s=612x612',
+      subtitle: '253-532-7457',
+      rightSubtitle:"$999.10"
+    },
+    {
+      name: 'Amy Farha',
+      avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+      subtitle: '416-0101-0202',
+      rightSubtitle: "$50.49"
+    },
+    {
+      name: 'Kanye West',
+      avatar_url: 'https://www.rollingstone.com/wp-content/uploads/2019/01/shutterstock_10010937aj.jpg?resize=900,600&w=450',
+      subtitle: '543-1435-7457',
+      rightSubtitle:"$42.42"
+    },
+    {
+      name: 'Grace Zheng',
+      avatar_url: 'https://media.discordapp.net/attachments/643174241327382569/643182907422277670/image0.jpg?width=374&height=663',
+      subtitle: '543-1435-7457',
+      rightSubtitle:"$14.20",
+      color: "red"
+    },
+    {
+      name: 'Anthony Jackson',
+      avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      subtitle: '905-111-2222',
+      rightSubtitle:"$30.29"
+    }
+  ];

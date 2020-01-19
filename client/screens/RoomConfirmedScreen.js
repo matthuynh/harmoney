@@ -4,18 +4,16 @@ import {
   ScrollView,
   StyleSheet,
   View,
-  SafeAreaView,
-  Image
+  SafeAreaView
 } from 'react-native';
-import { Header, Text,  } from 'react-native-elements';
-import { ThinHeader } from "../components/base/ThinHeader";
-import { RequestsList } from '../components/specific/RequestsList';
-
+import { Card, Header, Text } from 'react-native-elements';
 import { ClickableIcon } from '../components/base/ClickableIcon';
-import { d1_contacts, d2_contacts, d3_contacts, d4_contacts }  from '../constants/Contacts';
+import { Contact } from '../components/base/Contact';
 
+import { InvitedList } from '../components/specific/InvitedList';
+import { rooms } from '../constants/Contacts';
 
-export default class PaymentsScreen extends React.Component {
+export default class RoomConfirmedScreen extends React.Component {
 
   subheader = (text) => {
     return (
@@ -34,7 +32,7 @@ export default class PaymentsScreen extends React.Component {
         <View style={styles.container}>
             <Header
                 leftComponent={<ClickableIcon name="keyboard-backspace" type="material" color="white" onPress={this.handleIconClick}/>}
-                rightComponent={this.subheader("Transfer History")}
+                rightComponent={this.subheader("Room Created!")}
                 containerStyle={{
                     backgroundColor: '#57c6f4', height: 40, paddingTop: 0
                   }}
@@ -43,18 +41,16 @@ export default class PaymentsScreen extends React.Component {
                 placement='center'
             />
 
-        <ScrollView style={styles.container} bounces={false}>
-          <ThinHeader text="January 18th, 2020" />
-          <RequestsList list={d1_contacts}/>
-          <ThinHeader text="January 14th, 2020" />
-          <RequestsList list={d2_contacts}/>
-          <ThinHeader text="January 4th, 2020" />
-          <RequestsList list={d3_contacts}/>
-          <ThinHeader text="December 24th, 2019" />
-          <RequestsList list={d4_contacts}/>
-        </ScrollView>
+            <Text style={styles.h1}>Waiting ...</Text>
 
-  
+            <Text style={styles.subtitle}>Currently waiting for everyone to accept/decline!</Text>
+             
+            <Card title="Invited Users">
+              <ScrollView style={styles.members} bounces={false}>
+                  <InvitedList list={rooms}/>
+              </ScrollView>
+
+            </Card>
         </View>
       </View>
   
@@ -64,17 +60,17 @@ export default class PaymentsScreen extends React.Component {
   
 }
 
-PaymentsScreen.navigationOptions = {
+RoomConfirmedScreen.navigationOptions = {
   header: null,
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffff'
+    backgroundColor: '#fff'
   },
   members: {
-    flex: 1,
+    height: 250,
     backgroundColor: '#fff',
     paddingTop: 10
   },
@@ -89,13 +85,12 @@ const styles = StyleSheet.create({
   },
   h1 : {
     fontWeight: 'bold',
-    paddingTop: 150,
-    fontSize: 75,
+    paddingTop: 70,
+    fontSize: 60,
     textAlign: 'center'
   },
   subtitle : {
-    paddingTop: 60,
-    fontWeight: 'bold',
+    paddingTop: 50,
     fontSize: 30,
     textAlign: 'center'
   }

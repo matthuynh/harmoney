@@ -13,10 +13,6 @@ export class HomeScrollView extends Component {
   constructor (props) {
     super(props);
   }
-
-  handleIconClick = () => {
-
-  }
   
   subheader = (text) => {
     return (
@@ -46,8 +42,8 @@ export class HomeScrollView extends Component {
           snapToInterval={width} snapToAlignment='center' persistentScrollbar={true}
           overScrollMode='never' decelerationRate='fast' bounces={false}
           scrollIndicatorInsets={{top: 0, left: 0, bottom: height * 0.757, right: 0}}>
-            <CreateRoomView />
-            <RequestsView />
+            <CreateRoomView onPress={this.props.onPress}/>
+            <RequestsView onPress={this.props.onReqPress}/>
           </ScrollView>
         </SafeAreaView>
       </View>
