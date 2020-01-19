@@ -12,7 +12,6 @@ import {
 } from "react-native";
 import TabBarIcon from "../components/TabBarIcon";
 // import { Input } from "react-native-elements";
-import { SERVER_URL } from 'react-native-dotenv'
 
 export default class RegisterScreen extends React.Component {
 	constructor() {
@@ -92,7 +91,6 @@ export default class RegisterScreen extends React.Component {
 	}
 
 	_submitInAsync = async () => {
-    console.log(SERVER_URL);
     console.log(this.state.email);
     console.log(this.state.password);
     console.log(this.state.firstName);
