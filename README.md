@@ -6,7 +6,7 @@
 
 <div align="center">
 
-  [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com) 
+  [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](https://uofthacks.com/) 
   [![Status](https://img.shields.io/badge/status-complete-success.svg)]() 
   [![License](https://img.shields.io/badge/license-GPL-blue.svg)](LICENSE.md)
 
@@ -14,7 +14,7 @@
 
 ---
 
-<p align="center"> Harmoney - A UofTHacks 2020 project. Built by @jcserv, @daniil-oliynyk, @omardahir99, @matthuynh
+<p align="center"> Harmoney - A UofTHacks VII project. Built by @jcserv, @daniil-oliynyk, @omardahir99, @matthuynh
     <br> 
 </p>
 
@@ -43,6 +43,8 @@ To help you understand when Harmoney would be useful, we have developed three co
 1. Suppose you are eating out with your friends at a restaurant that only takes debit. You offer to take the entire bill for your friends, but in exchange you ask that they re-pay you at a later day. You can use Harmoney to create a Room, and invite your friends to that Room. You can specify a Room Balance, and Harmoney will automatically split this balance equally between your friends. A request will be sent to each friend, and you will be able to view the progress of the Room at any time.
 2. Suppose you are living with a roommate, and you both decide to split the monthly Internet bill. Normally, you pay the bill, while your roommate sends you an e-transfer to repay you. With Harmoney, you can create a Room with your roommate, and set-up a recurring monthly balance. At the same time each month, the Room will notify your roommate to transfer you money.
 3. Suppose you and a group of friends want to buy a big gift for someone. You are with your friends at the mall, and you guys find a good gift. You offer to pay for the gift. Similarly to our restaurant scenario, you can use Harmoney to create a Room and invite your friends to the Room.
+
+[View the Project Demo Here](https://youtu.be/s13y0c__6u4)
 
 ## 💡 How we built it <a name = "inspiration"></a>
 The application runs on mobile devices. React Native was used to develop the front-end interface, while Node.js was used to power the back-end. MongoDB is used to store Users and Room Data, and Passport is used to authenticate users.
