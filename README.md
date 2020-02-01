@@ -34,7 +34,8 @@ Orange juice and toothpaste. Bleach and annomia. Lego bricks and feet. Friends a
 ## 💡 Idea / Solution <a name = "idea"></a>
 Harmoney aims to solve situations that may arise during everyday life. One major pain point that Harmoney aims to solve is the idea of "group e-tranfers" and "group bill payments". Our app allows you to request money from other users on a per-request or on a scheduled basis.
 
-## 📷 Screenshots <a name="screenshots"></a>
+## 📷 Screenshots/Project Demo <a name="screenshots"></a>
+[View the Project Demo Here](https://youtu.be/s13y0c__6u4)
 You can click on each screenshot to expand them.
 
 <p style="text-align:center;">
@@ -61,7 +62,6 @@ To help you understand when Harmoney would be useful, we have developed three co
 2. Suppose you are living with a roommate, and you both decide to split the monthly Internet bill. Normally, you pay the bill, while your roommate sends you an e-transfer to repay you. With Harmoney, you can create a Room with your roommate, and set-up a recurring monthly balance. At the same time each month, the Room will notify your roommate to transfer you money.
 3. Suppose you and a group of friends want to buy a big gift for someone. You are with your friends at the mall, and you guys find a good gift. You offer to pay for the gift. Similarly to our restaurant scenario, you can use Harmoney to create a Room and invite your friends to the Room.
 
-[View the Project Demo Here](https://youtu.be/s13y0c__6u4)
 
 ## 💻 How we built it <a name = "inspiration"></a>
 The application runs on mobile devices. React Native was used to develop the front-end interface, while Node.js was used to power the back-end. MongoDB is used to store Users and Room Data, and Passport is used to authenticate users.
