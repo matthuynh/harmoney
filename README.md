@@ -32,11 +32,28 @@ Orange juice and toothpaste. Bleach and annomia. Lego bricks and feet. Friends a
 - [Authors](#authors) -->
 
 ## 💡 Idea / Solution <a name = "idea"></a>
-Harmoney aims to solve situations that may arise during everyday life. One major pain point that Harmoney aims to solve is the idea of "group e-tranfers". Our app allows you to request money from other users on a per-request or on a scheduled basis.
+Harmoney aims to solve situations that may arise during everyday life. One major pain point that Harmoney aims to solve is the idea of "group e-tranfers" and "group bill payments". Our app allows you to request money from other users on a per-request or on a scheduled basis.
+
+## 📷 Screenshots <a name="screenshots"></a>
+You can click on each screenshot to expand them.
+
+<p style="text-align:center;">
+  <img src="https://user-images.githubusercontent.com/19757152/73596160-e9487800-44ed-11ea-9df0-b11131c552bc.PNG" width="250" />
+  <img src="https://user-images.githubusercontent.com/19757152/73596168-f6656700-44ed-11ea-8b3a-725600a29207.PNG" width="250" /> 
+  <img src="https://user-images.githubusercontent.com/19757152/73596305-e00bdb00-44ee-11ea-85b2-4203cce89f2f.PNG" width="250" /> 
+</p>
+
+
+<p style="text-align:center;">
+  <img src="https://user-images.githubusercontent.com/19757152/73596239-99b67c00-44ee-11ea-85fa-edf3f22e380e.PNG" width="250" /> 
+  <img src="https://user-images.githubusercontent.com/19757152/73596253-b488f080-44ee-11ea-823b-32404936b0c2.PNG" width="250" />
+  <img src="https://user-images.githubusercontent.com/19757152/73596282-cc607480-44ee-11ea-893e-e21688eecab2.PNG" width="250" /> 
+</p>
+
 
 <!-- ## 💡 Inspiration <a name = "inspiration"></a> -->
 
-## 💡 What it Does <a name = "inspiration"></a>
+## ✅ What it Does <a name = "inspiration"></a>
 Users that want to request money can create a Harmoney Room. These users are known as the Room Owner. With a Room, you can generate a unique Room ID and share this ID with other users (such as your friends). Your friends can use this ID to join your Room. Once your friends are in the Room, they can see other users who are in the Room, and they can also see how much money is owed to the Room Owner. Money is transferred between users through the use of e-transfers, which can be completed through services such as Stripe or Interac. Using a Room is useful because it keeps a record of all transactions. The Room can also notify other users of how much money they owe.
 
 To help you understand when Harmoney would be useful, we have developed three common scenarios that you may have experienced yourself:
@@ -46,29 +63,8 @@ To help you understand when Harmoney would be useful, we have developed three co
 
 [View the Project Demo Here](https://youtu.be/s13y0c__6u4)
 
-## 💡 How we built it <a name = "inspiration"></a>
+## 💻 How we built it <a name = "inspiration"></a>
 The application runs on mobile devices. React Native was used to develop the front-end interface, while Node.js was used to power the back-end. MongoDB is used to store Users and Room Data, and Passport is used to authenticate users.
-
-
-<!-- ## Challenges we ran into -->
-
-<!-- ## Accomplishments we're proud of  -->
-
-<!-- ## What we learned -->
-
-<!-- ## What's next for AirDrums -->
-
-<!-- ## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
-- What are the dependencies of your project?
-- Describe each limitation in detailed but concise terms
-- Explain why each limitation exists
-- Provide the reasons why each limitation could not be overcome using the method(s) chosen to acquire.
-- Assess the impact of each limitation in relation to the overall findings and conclusions of your project, and if 
-appropriate, describe how these limitations could point to the need for further research. -->
-
-<!-- ## 🚀 Future Scope <a name = "future_scope"></a>
-Write about what you could not develop during the course of the Hackathon; and about what your project can achieve 
-in the future. -->
 
 <!-- ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development 
